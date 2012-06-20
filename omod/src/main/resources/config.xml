@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module configVersion="1.2">
+
+	<!-- Module Properties -->
+	<id>${project.parent.artifactId}</id>
+	<name>${project.parent.name}</name>
+	<version>${project.parent.version}</version>
+	<package>${project.parent.groupId}.${project.parent.artifactId}</package>
+	<author>Partners In Health</author>
+	<description>
+		${project.parent.description}
+	</description>
+	<updateURL>
+		https://dev.openmrs.org/modules/download/${project.parent.artifactId}/update.rdf
+	</updateURL>
+	<require_version>1.9.0</require_version>
+	<!-- / Module Properties -->
+
+	<!-- Module Activator -->
+	<activator>${project.parent.groupId}.${project.parent.artifactId}.PihRwandaActivator</activator>
+	
+	<extension>
+		<point>org.openmrs.headerFullIncludeExt</point>
+		<class>${project.parent.groupId}.${project.parent.artifactId}.web.extension.HeaderFullExtension</class>
+	</extension>
+	
+	<privilege>
+		<name>Application Access - Outpatient</name>
+		<description>Can access the outpatient application</description>
+	</privilege>
+	
+	<privilege>
+		<name>Application Access - CHW</name>
+		<description>Can access the CHW Management application</description>
+	</privilege>
+	
+	<privilege>
+		<name>Application Access - Lab</name>
+		<description>Can access the Lab Entry application</description>
+	</privilege>
+	
+	<privilege>
+		<name>Application Access - General</name>
+		<description>Can access the General application</description>
+	</privilege>
+
+	<messages>
+		<lang>en</lang>
+		<file>messages.properties</file>
+	</messages>
+
+</module>
