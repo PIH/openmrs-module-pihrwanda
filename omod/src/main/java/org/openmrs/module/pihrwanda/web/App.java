@@ -21,36 +21,55 @@ import org.openmrs.User;
  */
 public enum App {
 	
-	OUTPATIENT (
-		"outpatient", 
-		"/module/rwandaprimarycare/homepage.form", 
-		"/module/rwandaprimarycare/patient.form",
-		"Application Access - Outpatient"
-	),
 	CHW (
 		"chw", 
 		"/pages/providerHome.page", 
 		"/patientDashboard.form",
 		"Application Access - CHW"
 	),
-	LAB (
-		"lab", 
-		"/module/simplelabentry/index.htm", 
-		"/patientDashboard.form",
-		"Application Access - Lab"
-	),
-	GENERAL (
-		"general", 
-		"/module/pihrwanda/apps/general/index.form", 
+	ONCOLOGY (
+		"oncology", 
+		"/module/pihrwanda/apps/oncology/index.form", 
 		"/patientDashboard.form",
 		"Application Access - General"
 	),
 	ADMINISTRATION (
 		"administration", 
-		"/admin/index.htm", 
+		"/findPatient.htm", 
 		"/patientDashboard.form",
 		"Application Access - Administration"
 	);
+	
+//	OUTPATIENT (
+//		"outpatient", 
+//		"/module/rwandaprimarycare/homepage.form", 
+//		"/module/rwandaprimarycare/patient.form",
+//		"Application Access - Outpatient"
+//	),
+//	CHW (
+//		"chw", 
+//		"/pages/providerHome.page", 
+//		"/patientDashboard.form",
+//		"Application Access - CHW"
+//	),
+//	LAB (
+//		"lab", 
+//		"/module/simplelabentry/index.htm", 
+//		"/patientDashboard.form",
+//		"Application Access - Lab"
+//	),
+//	GENERAL (
+//		"general", 
+//		"/module/pihrwanda/apps/oncology/index.form", 
+//		"/patientDashboard.form",
+//		"Application Access - General"
+//	),
+//	ADMINISTRATION (
+//		"administration", 
+//		"/admin/index.htm", 
+//		"/patientDashboard.form",
+//		"Application Access - Administration"
+//	);
 	
 	App(String name, String indexUrl, String patientDashboardUrl, String requiredPrivilege) {
 		this.name = name;
