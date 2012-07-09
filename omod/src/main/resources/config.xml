@@ -50,6 +50,46 @@
 		<description>Can access the General application</description>
 	</privilege>
 
+	<globalProperty>
+		<property>pihrwanda.chemotherapyWorkflow</property>
+		<defaultValue>39</defaultValue>
+		<description>
+			The workflow id of the chemotherapy status oncology workflow
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.radiationWorkflow</property>
+		<defaultValue>42</defaultValue>
+		<description>
+			The workflow id of the radiation status oncology workflow
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.surgeryWorkflow</property>
+		<defaultValue>43</defaultValue>
+		<description>
+			The workflow id of the surgery status oncology workflow
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.diagnosisStatusWorkflow</property>
+		<defaultValue>38</defaultValue>
+		<description>
+			The workflow id of the diagnosis status oncology workflow
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>relationship.accompagnatuer</property>
+		<defaultValue>1</defaultValue>
+		<description>
+			The relationship type id used to store the accompagnatuer of the patient
+		</description>
+	</globalProperty>
+	
 	<messages>
 		<lang>en</lang>
 		<file>messages.properties</file>

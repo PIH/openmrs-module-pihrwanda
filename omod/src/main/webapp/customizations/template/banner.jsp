@@ -29,11 +29,10 @@
 		<a href="${pageContext.request.contextPath}">
 			<img style="width:100px; height:25px; vertical-align:middle;" src="${pageContext.request.contextPath}/moduleResources/pihrwanda/images/openmrs_logo_white_large.png" alt="OpenMRS" border="0"/>
 		</a>
-		<div class="fullBar topBar">
-			<a class="boldWhiteLink" href="${pageContext.request.contextPath}"><spring:message code="Navigation.home"/></a>
-			<a class="boldWhiteLink" href="${pageContext.request.contextPath}${app.indexUrl}">
-				&nbsp;&nbsp;&gt;&nbsp;&nbsp;<spring:message code="pihrwanda.app.${app.name}"/>
-			</a>
+		<span id="appName"><a class="boldBlackLink" href="${pageContext.request.contextPath}${app.indexUrl}"><spring:message code="pihrwanda.app.${app.name}"/></span>
+		</a>
+		<div id="navBar" class="fullBar topBar">
+			
 		</div>
 		</c:otherwise>
 		</c:choose>

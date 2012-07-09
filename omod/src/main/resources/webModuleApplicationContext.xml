@@ -12,6 +12,19 @@
            http://www.springframework.org/schema/util/spring-util-2.0.xsd">
 	  
 	<bean class="org.openmrs.module.pihrwanda.web.CustomBrandingInitializer" />
+	
+	<bean id="PihrwandaUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+    	<property name="order"><value>89</value></property>
+    	<property name="mappings">
+            <props>
+				<prop key="**/apps/oncology/oncPatientHeader.portlet">OncPatientHeaderPortletController</prop>
+				<prop key="**/apps/oncology/oncSummary.portlet">OncSummaryPortletController</prop>
+			</props>
+		</property>
+	</bean>
+    
+    <bean id="OncPatientHeaderPortletController" class="org.openmrs.module.pihrwanda.web.controller.apps.OncPatientHeaderPortletController"/>
+    <bean id="OncSummaryPortletController" class="org.openmrs.module.pihrwanda.web.controller.apps.OncSummaryPortletController"/>
 </beans>
 
   

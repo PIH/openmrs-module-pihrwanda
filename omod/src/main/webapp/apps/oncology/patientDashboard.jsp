@@ -47,6 +47,17 @@
 					   '<spring:message code="general.cancel"/>': function() { $j(this).dialog("close"); }
 			}
 		});	
+		
+		jQuery('#appMenu li ul').css(
+				{ display: "none", left: "auto" }); 
+		
+		jQuery('#appMenu li').hover(function() { 
+			jQuery(this) .find('ul') .stop(true, true) .slideDown('fast');
+			}, function() { 
+			jQuery(this) .find('ul') .stop(true,true) .fadeOut('fast'); 
+		});
+		
+		jQuery('#navBar').html(jQuery('#navItems'));
 	});
 	
 	function printTreatmentPlan()
@@ -95,6 +106,39 @@
     }
 </script>
 
+<span id="navItems">
+	<nav role="navigation"> 
+		<ul id="appMenu"> 
+			<li><a class="homeLink" href="/index.htm"><img src="${pageContext.request.contextPath}/moduleResources/pihrwanda/images/gohome.png"></a>
+			<li><a class="boldWhiteLink" href="#">Find</a> 
+				<ul> 
+					<li><a href="#">Search for patient</a></li> 
+					<li><a href="#">Scan Patient Barcode</a></li>
+				</ul>	
+			</li>
+			<li><a class="boldWhiteLink" href="#">Edit</a> 
+				<ul> 
+					<li><a href="#">Demographics</a></li> 
+				</ul>
+			</li>
+			<li><a class="boldWhiteLink" href="#">Enter</a>
+				<ul> 
+					<li><a  href="#">Staging & Diagnosis</a></li>
+					<li><a  href="#">Treatment Administration Summary</a>
+				</ul>	
+			</li>
+			<li><a class="boldWhiteLink" href="#">Print</a>
+				<ul> 
+					<li><a  href="#">Patient Barcode</a></li>
+					<li><a  href="#">Chemotherapy Treatment Administration Plan</a></li>
+					<li><a  href="#">Treatment Road map</a>
+				</ul>	
+			</li>
+		</ul>
+	</nav>
+</span>
+
+	
 <c:if test="${patient.voided}">
 	<div id="patientDashboardVoided" class="retiredMessage">
 		<div><spring:message code="Patient.voidedMessage"/></div>
@@ -120,75 +164,76 @@
 	</div>
 </c:if>
 
-<div id="patientHeader"><openmrs:portlet url="patientHeader" id="patientDashboardHeader" patientId="${patient.patientId}"/></div>
+<table class="dashboardTable">
+	<tr>
+		<td class="pihRwandaPatientHeader">
+			<div class="patientHeader"><openmrs:portlet url="/apps/oncology/oncPatientHeader.portlet" id="patientDashboardHeader" moduleId="pihrwanda" patientId="${patient.patientId}"/></div>
+		</td>
 
-<div id="actions">
-	<div id="availableCycles">
-		<c:if test="${!empty cycles}">
-			<input type="button" id="printPlan"  value="<spring:message code="pihrwanda.printTreatmentAdminPlan"/>"/>
-		</c:if>	
-	</div>
-</div>
-
-<div id="patientTabs${patientVariation}">
-	<ul>
-		<li><a id="patientSummaryTab" href="#" onclick="return changeTab(this);" hidefocus="hidefocus"><spring:message code="pihrwanda.summary"/></a></li>
-		<li><a id="patientRegimenTab" href="#" onclick="return changeTab(this);" hidefocus="hidefocus"><spring:message code="patientDashboard.regimens"/></a></li>
-		<openmrs:globalProperty key="visits.enabled" defaultValue="true" var="visitsEnabled"/>
-		<c:choose>		
-			<c:when test='${visitsEnabled}'>
-					<li><a id="patientVisitsTab" href="#" onclick="return changeTab(this);" hidefocus="hidefocus"><spring:message code="patientDashboard.visits"/></a></li>
-			</c:when>
-			<c:otherwise>
-					<li><a id="patientEncountersTab" href="#" onclick="return changeTab(this);" hidefocus="hidefocus"><spring:message code="patientDashboard.encounters"/></a></li>
-			</c:otherwise>
-		</c:choose>
-		
-		<li><a id="patientGraphsTab" href="#" onclick="return changeTab(this);" hidefocus="hidefocus"><spring:message code="patientDashboard.graphs"/></a></li>
-		
-		<li><a id="patientNotesTab" href="#" onclick="return changeTab(this);" hidefocus="hidefocus"><spring:message code="pihrwanda.notes"/></a></li>
-	</ul>
-</div>
-
-
-
-<div id="patientSections">
-	
-	<div id="patientSummary" style="display:none;">
-		
-	</div>
-	
-	<div id="patientRegimen" style="display:none;">
-		<openmrs:extensionPoint pointId="org.openmrs.patientDashboard.RegimenTabHeader" type="html" parameters="patientId=${patient.patientId}" />
-		<openmrs:portlet url="patientRegimen" id="patientDashboardRegimen" patientId="${patient.patientId}" parameters="returnUrl=/module/pihrwanda/apps/oncology/patientDashboard.form" />
-	</div>
-	
-	<openmrs:globalProperty key="visits.enabled" defaultValue="true" var="visitsEnabled"/>
-	<c:choose>		
-		<c:when test='${visitsEnabled}'>
-				<div id="patientVisits" style="display:none;">
-					<openmrs:extensionPoint pointId="org.openmrs.patientDashboard.VisitsTabHeader" type="html" parameters="patientId=${patient.patientId}" />
-					<openmrs:portlet url="patientVisits" id="patientDashboardVisits" patientId="${patient.patientId}" />
+		<td class="pihRwandaPatientTabs">
+				<div id="patientTabs${patientVariation}">
+					<ul>
+						<li><a id="patientSummaryTab" href="#" onclick="return changeTab(this);" hidefocus="hidefocus"><spring:message code="pihrwanda.patientSummary"/></a></li>
+						<li><a id="patientRegimenTab" href="#" onclick="return changeTab(this);" hidefocus="hidefocus"><spring:message code="patientDashboard.regimens"/></a></li>
+						<openmrs:globalProperty key="visits.enabled" defaultValue="true" var="visitsEnabled"/>
+						<c:choose>		
+							<c:when test='${visitsEnabled}'>
+									<li><a id="patientVisitsTab" href="#" onclick="return changeTab(this);" hidefocus="hidefocus"><spring:message code="patientDashboard.visits"/></a></li>
+							</c:when>
+							<c:otherwise>
+									<li><a id="patientEncountersTab" href="#" onclick="return changeTab(this);" hidefocus="hidefocus"><spring:message code="patientDashboard.encounters"/></a></li>
+							</c:otherwise>
+						</c:choose>
+						
+						<li><a id="patientGraphsTab" href="#" onclick="return changeTab(this);" hidefocus="hidefocus"><spring:message code="patientDashboard.graphs"/></a></li>
+						
+						<li><a id="patientNotesTab" href="#" onclick="return changeTab(this);" hidefocus="hidefocus"><spring:message code="pihrwanda.notes"/></a></li>
+					</ul>
 				</div>
-		</c:when>
-		<c:otherwise>
-				<div id="patientEncounters" style="display:none;">
-					<openmrs:extensionPoint pointId="org.openmrs.patientDashboard.EncountersTabHeader" type="html" parameters="patientId=${patient.patientId}" />
-					<openmrs:globalProperty var="maxEncs" key="dashboard.maximumNumberOfEncountersToShow" defaultValue="" />
-					<openmrs:portlet url="patientEncounters" id="patientDashboardEncounters" patientId="${patient.patientId}" parameters="num=${maxEncs}|showPagination=true|formEntryReturnUrl=${pageContext.request.contextPath}/patientDashboard.form"/>
-				</div>
-		</c:otherwise>
-	</c:choose>
-	
-	<div id="patientGraphs" style="display:none;">
-		<openmrs:extensionPoint pointId="org.openmrs.patientDashboard.GraphsTabHeader" type="html" parameters="patientId=${patient.patientId}" />
-		<openmrs:portlet url="patientGraphs" id="patientGraphsPortlet" patientId="${patient.patientId}"/>
-	</div>
-	
-	<div id="patientNotes" style="display:none;">
+			</div>
 
-	</div>
-</div>
+			<div id="patientSections">
+				
+				<div id="patientSummary" style="display:none;">
+					<openmrs:portlet url="apps/oncology/oncSummary.portlet" id="oncologySummary" moduleId="pihrwanda" patientId="${patient.patientId}"/>
+				</div>
+				
+				<div id="patientRegimen" style="display:none;">
+					<div id="availableCycles">
+						<c:if test="${!empty cycles}">
+							<input type="button" id="printPlan"  value="<spring:message code="pihrwanda.printTreatmentAdminPlan"/>"/>
+						</c:if>	
+					</div>
+					<openmrs:portlet url="patientRegimen" id="patientDashboardRegimen" patientId="${patient.patientId}" parameters="returnUrl=/module/pihrwanda/apps/oncology/patientDashboard.form" />
+				</div>
+				
+				<openmrs:globalProperty key="visits.enabled" defaultValue="true" var="visitsEnabled"/>
+				<c:choose>		
+					<c:when test='${visitsEnabled}'>
+							<div id="patientVisits" style="display:none;">
+								<openmrs:portlet url="patientVisits" id="patientDashboardVisits" patientId="${patient.patientId}" />
+							</div>
+					</c:when>
+					<c:otherwise>
+							<div id="patientEncounters" style="display:none;">
+								<openmrs:globalProperty var="maxEncs" key="dashboard.maximumNumberOfEncountersToShow" defaultValue="" />
+								<openmrs:portlet url="patientEncounters" id="patientDashboardEncounters" patientId="${patient.patientId}" parameters="num=${maxEncs}|showPagination=true|formEntryReturnUrl=${pageContext.request.contextPath}/module/pihrwanda/apps/oncology/patientDashboard.form"/>
+							</div>
+					</c:otherwise>
+				</c:choose>
+				
+				<div id="patientGraphs" style="display:none;">
+					<openmrs:extensionPoint pointId="org.openmrs.patientDashboard.GraphsTabHeader" type="html" parameters="patientId=${patient.patientId}" />
+					<openmrs:portlet url="patientGraphs" id="patientGraphsPortlet" patientId="${patient.patientId}"/>
+				</div>
+				
+				<div id="patientNotes" style="display:none;">
+			
+				</div>
+			</div>
+		</td>
+	</tr>
+</table>
 
 <div id="treatmentPlanDialog">	
 	<div class="box">

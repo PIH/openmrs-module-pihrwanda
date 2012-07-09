@@ -10,7 +10,7 @@ div.fullBar {
 }
 
 div.topBar {
-	height: 1.5em;
+	height: 2.4em;
 	font-size: 1.2em;
 	font-weight: bold;
 	text-align: left;
@@ -20,10 +20,195 @@ div.topBar {
 	position: absolute;
 	padding-top:4px;
 	padding-left:10px;
+	margin-top: 20px;
 }
 
 a.boldWhiteLink {
 	text-decoration:none;	
 	color: white;
 	font-weight: bold;
+	padding-top: 4px;
 }
+
+a.homeLink {
+	text-decoration:none;	
+	color: black;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+a.boldBlackLink {
+	text-decoration:none;	
+	color: black;
+	font-weight: bold;
+	font-size: 1.8em;
+}
+
+#appName {
+	padding:15px;
+	vertical-align: bottom;
+}
+
+.pihRwanda {
+	background-color: #E0E0F0;
+	border-radius:1em;
+	-moz-border-radius:1em;
+	-webkit-border-radius:1em;
+}
+
+.pihRwandaPatientHeader {
+	width: 20%;
+	vertical-align: top;	
+}
+
+.pihRwandaPatientTabs {
+	width: 80%;
+	vertical-align: top;	
+}
+
+.pihRwanda #patientHeaderPatientNameOnc {
+    font-size: 1.3em;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.pihRwanda .header {
+	background-color: #8FABC7;
+	font-weight: bold;
+	font-size: 1.4em;
+	padding-top: 8px;
+}
+
+.pihRwanda #patientGender {
+	margin-bottom:20px;
+	margin-left:10px;
+	padding-top:5px;
+}
+
+.pihRwanda #patientGender .years {
+	font-weight: bold;
+}
+
+.pihRwanda #patientGender img {
+	float: left;
+}
+
+#patientHeaderInfo {
+	font-size: 0.9em;
+	width: 100%;
+}
+
+ .indentedHeader {
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 0px;
+	padding-right: 0px;	
+	width: 2%;
+}	
+
+ .indentedValue {
+	margin-left: 0px;
+	padding-left: 0px;
+	text-align: left;
+	width: 90%;
+}
+
+#patientHeaderInfo .padded {
+	padding-top: 5px;	
+}
+
+#patientHeaderInfo .paddedLast {
+	padding-top: 5px;
+	padding-bottom: 10px;	
+}
+
+.identifierType {
+	padding-left: 20px;
+	font-size: 0.8em;
+}
+
+.dashboardTable {
+	width: 100%;	
+}
+
+.pihRwanda .actions {
+	padding: 20px;
+}
+
+#container { 
+	position: relative; 
+}
+
+#appMenu { 
+	position: absolute;
+	background-color: #009384;
+	color: #FFFFFF;
+	width: 100%;
+}
+
+#appMenu, #appMenu ul { 
+	padding: 0; 
+	margin: 0; 
+	list-style: none; 
+}
+
+#appMenu li { 
+	float: left; 
+	background: #009384;
+	border-right: 1px solid #252525;
+}
+
+#appMenu a { 
+	display: block; 
+	width: 10em; 
+	text-decoration:none;	
+}
+
+#appMenu li a { 
+	padding-left: 10px;		
+}
+
+#appMenu li ul { 
+	position: absolute; 
+	width: 20em;
+	left: -999em; 
+}
+
+#appMenu li ul li{ 
+	width: 20em;
+	text-decoration:none;
+	font-size: 0.9em;
+	color: white;
+	font-weight: normal;
+	border-top: 1px solid #252525; /*--Create bevel effect--*/  
+    border-bottom: 1px solid #444; /*--Create bevel effect--*/
+}
+
+#appMenu li ul li a{  
+	width: 20em;
+	color: white;
+}
+
+#appMenu li:hover ul, #appMenu li ul:hover { 
+	left:auto; 
+}
+
+#oncSummary {
+	width: 100%	
+}
+
+#oncSummary td{
+	padding: 10px;
+}
+
+.oncSummaryCol1 {
+	width: 70%;
+}
+
+.oncSummaryCol2 {
+	width: 30%;
+}
+
+

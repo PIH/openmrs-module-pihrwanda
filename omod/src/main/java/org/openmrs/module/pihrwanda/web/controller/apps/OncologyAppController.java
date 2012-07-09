@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class OncologyAppController {
-    
+
     @RequestMapping("/module/pihrwanda/apps/oncology/index.form") 
     public void viewIndex(ModelMap model) {
     	
@@ -64,7 +64,6 @@ public class OncologyAppController {
 		}
     	model.addAttribute("patient", patient);
     }
-    
     
     private ReportDefinition findReportDefinition(String name) {
 		ReportDefinitionService s = (ReportDefinitionService) Context.getService(ReportDefinitionService.class);
