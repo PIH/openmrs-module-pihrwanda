@@ -1,3 +1,7 @@
+#content {
+	padding-left: 0px;	
+}
+
 
 div {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -57,12 +61,14 @@ a.boldBlackLink {
 }
 
 .pihRwandaPatientHeader {
-	width: 20%;
-	vertical-align: top;	
+	width: 22%;
+	vertical-align: top;
+	padding-left: 5px;
+	padding-right: 5px;	
 }
 
 .pihRwandaPatientTabs {
-	width: 80%;
+	width: 78%;
 	vertical-align: top;	
 }
 
@@ -117,6 +123,10 @@ a.boldBlackLink {
 
 #patientHeaderInfo .padded {
 	padding-top: 5px;	
+}
+
+#patientHeaderInfo .leftPadded {
+	padding-left: 4px;	
 }
 
 #patientHeaderInfo .paddedLast {
@@ -179,7 +189,7 @@ a.boldBlackLink {
 #appMenu li ul li{ 
 	width: 20em;
 	text-decoration:none;
-	font-size: 0.9em;
+	font-size: 1.0em;
 	color: white;
 	font-weight: normal;
 	border-top: 1px solid #252525; /*--Create bevel effect--*/  
@@ -209,6 +219,67 @@ a.boldBlackLink {
 
 .oncSummaryCol2 {
 	width: 30%;
+}
+
+#oncClinicalSummary .boxHeader {
+	font-size: 0.9em;	
+}
+
+.relationship {
+	padding: 0px;
+	margin: 0px;	
+}
+
+.relationship tbody{
+	padding: 0px;
+	margin: 0px;	
+}
+
+.relationship tr{
+	padding: 0px;
+	margin: 0px;	
+}
+
+.relationship td{
+	padding: 0px;
+	margin: 0px;	
+}
+
+.labresult {
+	font-size: 0.7em;
+	border: 1px solid black;
+	text-align: center;
+	border-collapse: collapse;
+}
+
+.labresult td {
+ 	width: 4%;
+ 	border: 1px solid black;
+}
+
+.labresult th {
+ 	background-color: #F0F0F0;
+ 	border: 1px solid black;
+}
+
+.resultDates td {
+	font-size: 0.6em;
+}
+
+.transfusions {
+	font-size: 0.8em;
+	border: 1px solid black;
+	border-collapse: collapse;
+	width: 60%;
+}
+
+.transfusions td {
+ 	border: 1px solid black;
+}
+
+.transfusions th {
+ 	background-color: #F0F0F0;
+ 	border: 1px solid black;
 }
 
 

@@ -83,10 +83,275 @@
 	</globalProperty>
 	
 	<globalProperty>
-		<property>relationship.accompagnatuer</property>
-		<defaultValue>1</defaultValue>
+		<property>pihrwanda.ALLDiagnosisState</property>
+		<defaultValue>696</defaultValue>
 		<description>
-			The relationship type id used to store the accompagnatuer of the patient
+			The workflow state id for ALL 
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.diagnosisComments</property>
+		<defaultValue>7129</defaultValue>
+		<description>
+			The concept id of additional oncology diagnosis comments
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.allStaging</property>
+		<defaultValue>7179</defaultValue>
+		<description>
+			The concept id of ALL staging
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.phStatus</property>
+		<defaultValue>7184</defaultValue>
+		<description>
+			The concept id of Ph Statsu
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.hb</property>
+		<defaultValue>21</defaultValue>
+		<description>
+			The concept id of Hb
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.hct</property>
+		<defaultValue>1015</defaultValue>
+		<description>
+			The concept id of Hct
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.wbc</property>
+		<defaultValue>678</defaultValue>
+		<description>
+			The concept id of WBC
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.neutro</property>
+		<defaultValue>1022</defaultValue>
+		<description>
+			The concept id of Neutro(%)
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.lympho</property>
+		<defaultValue>1021</defaultValue>
+		<description>
+			The concept id of Lympho(%)
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.plts</property>
+		<defaultValue>729</defaultValue>
+		<description>
+			The concept id of Plts
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.esr</property>
+		<defaultValue>1477</defaultValue>
+		<description>
+			The concept id of ESR
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.anc</property>
+		<defaultValue>6675</defaultValue>
+		<description>
+			The concept id of ANC
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.na</property>
+		<defaultValue>1132</defaultValue>
+		<description>
+			The concept id of Na
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.k</property>
+		<defaultValue>1133</defaultValue>
+		<description>
+			The concept id of K
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.cl</property>
+		<defaultValue>1134</defaultValue>
+		<description>
+			The concept id of Cl
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.co2</property>
+		<defaultValue>1135</defaultValue>
+		<description>
+			The concept id of CO2
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.urea</property>
+		<defaultValue>857</defaultValue>
+		<description>
+			The concept id of Urea
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.cr</property>
+		<defaultValue>790</defaultValue>
+		<description>
+			The concept id of Cr
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.glu</property>
+		<defaultValue>887</defaultValue>
+		<description>
+			The concept id of Glu
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.ca</property>
+		<defaultValue>3056</defaultValue>
+		<description>
+			The concept id of Ca
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.sgot</property>
+		<defaultValue>653</defaultValue>
+		<description>
+			The concept id of SGOT
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.sgpt</property>
+		<defaultValue>654</defaultValue>
+		<description>
+			The concept id of SGPT
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.tbili</property>
+		<defaultValue>655</defaultValue>
+		<description>
+			The concept id of Tbili
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.dbili</property>
+		<defaultValue>3641</defaultValue>
+		<description>
+			The concept id of Dbili
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.alkphos</property>
+		<defaultValue>785</defaultValue>
+		<description>
+			The concept id of AlkPhos
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.uricAcid</property>
+		<defaultValue>3055</defaultValue>
+		<description>
+			The concept id of Uric acid
+		</description>
+	</globalProperty> 
+	
+	<globalProperty>
+		<property>pihrwanda.redTransfusionUnits</property>
+		<defaultValue>7192</defaultValue>
+		<description>
+			The concept id for units for red blood transfusion
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.wholeTransfusionUnits</property>
+		<defaultValue>7193</defaultValue>
+		<description>
+			The concept id units for whole blood transfusion
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.pltsTransfusionUnits</property>
+		<defaultValue>7191</defaultValue>
+		<description>
+			The concept id units for platelets transfusion
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.otherTransfusionType</property>
+		<defaultValue>7194</defaultValue>
+		<description>
+			The concept id for other transfusion type
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.otherTransfusionUnits</property>
+		<defaultValue>7195</defaultValue>
+		<description>
+			The concept id units for other transfusion
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.otherTransfusionConstruct</property>
+		<defaultValue>7196</defaultValue>
+		<description>
+			The concept id for the construct for other transfusions
+		</description>
+	</globalProperty>
+	
+	
+	<globalProperty>
+		<property>pihrwanda.managingDCA</property>
+		<defaultValue>14</defaultValue>
+		<description>
+			The relationship type id used to store the managingDCA of the patient
+		</description>
+	</globalProperty>
+	
+	<globalProperty>
+		<property>pihrwanda.managingGP</property>
+		<defaultValue>15</defaultValue>
+		<description>
+			The relationship type id used to store the managingGP of the patient
 		</description>
 	</globalProperty>
 	
