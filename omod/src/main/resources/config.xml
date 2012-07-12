@@ -20,6 +20,7 @@
 		<require_module>org.openmrs.module.reporting</require_module>
 		<require_module>org.openmrs.module.orderextension</require_module>
 		<require_module>org.openmrs.module.rwandareports</require_module>
+		<require_module>org.openmrs.module.htmlformflowsheet</require_module>
 	</require_modules>
 
 	<!-- Module Activator -->

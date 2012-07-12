@@ -4,12 +4,17 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.openmrs.DrugOrder;
 import org.openmrs.Patient;
+import org.openmrs.PatientIdentifierType;
+import org.openmrs.api.APIException;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.ModuleFactory;
 import org.openmrs.module.orderextension.DrugRegimen;
 import org.openmrs.module.orderextension.ExtendedDrugOrder;
+import org.openmrs.module.pihrwanda.web.App;
 import org.openmrs.module.reporting.report.definition.ReportDefinition;
 import org.openmrs.module.reporting.report.definition.service.ReportDefinitionService;
 import org.springframework.stereotype.Controller;
@@ -31,6 +36,14 @@ public class OncologyAppController {
     	
     	model.addAttribute("showAnalysis", ModuleFactory.getStartedModulesMap().containsKey("reportingcompatibility"));
     	model.addAttribute("reports", reports);
+    }
+    
+    @RequestMapping("/module/pihrwanda/apps/oncology/scanBarcode.form") 
+    public String chooseApp(@RequestParam(value="identifier") String identifier, HttpSession session) {
+    	
+    	List<Patient> patients =  Context.getPatientService().getPatients(null, identifier, null, true);
+    	
+    	return "redirect:/module/pihrwanda/apps/oncology/patientDashboard.form?patientId="+patients.get(0).getId();
     }
     
     @RequestMapping("/module/pihrwanda/apps/oncology/patientDashboard.form") 

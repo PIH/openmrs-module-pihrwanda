@@ -41,7 +41,7 @@
 			<td class="padded leftPadded"><strong><spring:message code="pihrwanda.bsa"/>: <c:if test="${!empty model.bsa }">${model.bsa }</c:if></strong>
 		</tr>
 		<tr>
-			<td class="padded leftPadded"><strong><spring:message code="pihrwanda.allergies"/>: </strong>NKDA
+			<td class="paddedLast leftPadded"><strong><spring:message code="pihrwanda.allergies"/>: </strong>NKDA
 		</tr>
 		
 		<tr class="header">

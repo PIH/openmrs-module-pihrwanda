@@ -19,12 +19,14 @@
             <props>
 				<prop key="**/apps/oncology/oncPatientHeader.portlet">OncPatientHeaderPortletController</prop>
 				<prop key="**/apps/oncology/oncSummary.portlet">OncSummaryPortletController</prop>
+				<prop key="**/apps/oncology/clinicianNotes.portlet">ClinicianNotesPortletController</prop>
 			</props>
 		</property>
 	</bean>
     
     <bean id="OncPatientHeaderPortletController" class="org.openmrs.module.pihrwanda.web.controller.apps.OncPatientHeaderPortletController"/>
     <bean id="OncSummaryPortletController" class="org.openmrs.module.pihrwanda.web.controller.apps.OncSummaryPortletController"/>
+    <bean id="ClinicianNotesPortletController" class="org.openmrs.module.pihrwanda.web.controller.apps.ClinicianNotesPortletController"/>
 </beans>
 
   

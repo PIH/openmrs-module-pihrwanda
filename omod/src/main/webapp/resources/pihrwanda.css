@@ -1,19 +1,19 @@
-#content {
+#oncDashboard #content {
 	padding-left: 0px;	
 }
 
 
-div {
+#oncBanner div {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
-div.fullBar {
+#oncBanner div.fullBar {
 	width: 100%;
 	left: 0px;
 	right: 0px;
 }
 
-div.topBar {
+#oncBanner div.topBar {
 	height: 2.4em;
 	font-size: 1.2em;
 	font-weight: bold;
@@ -27,21 +27,21 @@ div.topBar {
 	margin-top: 20px;
 }
 
-a.boldWhiteLink {
+#oncBanner a.boldWhiteLink {
 	text-decoration:none;	
 	color: white;
 	font-weight: bold;
 	padding-top: 4px;
 }
 
-a.homeLink {
+#oncBanner a.homeLink {
 	text-decoration:none;	
 	color: black;
 	font-weight: bold;
 	vertical-align: middle;
 }
 
-a.boldBlackLink {
+#oncBanner a.boldBlackLink {
 	text-decoration:none;	
 	color: black;
 	font-weight: bold;
@@ -101,40 +101,42 @@ a.boldBlackLink {
 	float: left;
 }
 
-#patientHeaderInfo {
+.pihRwanda #patientHeaderInfo {
 	font-size: 0.9em;
 	width: 100%;
 }
 
- .indentedHeader {
+.pihRwanda .indentedHeader {
 	margin-left: 0px;
 	margin-right: 0px;
 	padding-left: 0px;
 	padding-right: 0px;	
 	width: 2%;
+	font-size: 0.9em;
 }	
 
- .indentedValue {
+.pihRwanda .indentedValue {
 	margin-left: 0px;
 	padding-left: 0px;
 	text-align: left;
 	width: 90%;
+	font-size: 0.9em;
 }
 
-#patientHeaderInfo .padded {
+.pihRwanda #patientHeaderInfo .padded {
 	padding-top: 5px;	
 }
 
-#patientHeaderInfo .leftPadded {
+.pihRwanda #patientHeaderInfo .leftPadded {
 	padding-left: 4px;	
 }
 
-#patientHeaderInfo .paddedLast {
+.pihRwanda #patientHeaderInfo .paddedLast {
 	padding-top: 5px;
 	padding-bottom: 10px;	
 }
 
-.identifierType {
+.pihRwanda .identifierType {
 	padding-left: 20px;
 	font-size: 0.8em;
 }
@@ -227,7 +229,7 @@ a.boldBlackLink {
 
 .relationship {
 	padding: 0px;
-	margin: 0px;	
+	margin: 0px;
 }
 
 .relationship tbody{
@@ -242,11 +244,11 @@ a.boldBlackLink {
 
 .relationship td{
 	padding: 0px;
-	margin: 0px;	
+	margin: 0px;
+	font-size: 0.9em;		
 }
 
 .labresult {
-	font-size: 0.7em;
 	border: 1px solid black;
 	text-align: center;
 	border-collapse: collapse;
@@ -255,11 +257,13 @@ a.boldBlackLink {
 .labresult td {
  	width: 4%;
  	border: 1px solid black;
+ 	font-size: 0.7em;
 }
 
 .labresult th {
  	background-color: #F0F0F0;
  	border: 1px solid black;
+ 	font-size: 0.7em;
 }
 
 .resultDates td {
@@ -282,4 +286,53 @@ a.boldBlackLink {
  	border: 1px solid black;
 }
 
+.submitButton {
+	display: none;
+}
+
+#patientSections #htmlFormEntryBanner {
+	background-color: white;
+    border-bottom: 0px solid black;
+    border-top: 0px solid black;
+    height: 0px;
+}
+
+#patientSections #htmlFormEntryBanner a {
+	display: none;
+}
+	
+#patientNotes {
+	height: 600px;
+}
+
+.generalIndexTable {
+	width: 100%;
+}
+
+#reports {
+ 	vertical-align: top;
+ 	width: 30%;
+ 	font-size: 1.3em;
+ 	padding-left: 15px;
+}
+
+#reports a{
+ 	padding: 5px;
+}	
+
+#patientSearch {
+ 	vertical-align: top;
+ 	width: 70%;
+ 	font-size: 1.2em;
+ 	padding-left: 70px;
+ 	padding-right: 15px;
+}
+
+#indexButtons {
+	font-size: 1.1em;	
+}
+	
+#indexButtons a{
+	text-decoration:none;
+}
 

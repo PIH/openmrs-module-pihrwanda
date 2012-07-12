@@ -1,5 +1,6 @@
 <%@ include file="/WEB-INF/template/include.jsp" %>
 <openmrs:require privilege="View Patients" otherwise="/login.htm" redirect="/module/pihrwanda/oncology/index.htm" />
+<div id="oncDashboard">
 <%@ include file="/WEB-INF/template/header.jsp" %>
 <c:set var="baseUrl" value="${pageContext.request.contextPath}"/>
 
@@ -41,10 +42,10 @@
 			autoOpen: false,
 			modal: true,
 			title: '<spring:message code="pihrwanda.printTreatmentAdminPlan" javaScriptEscape="true"/>',
-			width: '80%',
+			width: '50%',
 			zIndex: 100,
 			buttons: { '<spring:message code="pihrwanda.print"/>': function() { printTreatmentPlan(); },
-					   '<spring:message code="general.cancel"/>': function() { $j(this).dialog("close"); }
+					   '<spring:message code="general.cancel"/>': function() { jQuery(this).dialog("close"); }
 			}
 		});	
 		
@@ -106,10 +107,13 @@
     }
 </script>
 
-<span id="navItems">
+<openmrs:htmlInclude file="/moduleResources/pihrwanda/pihrwanda.css" />
+
+<span id="nav" style="display:none;">
+<span id="navItems" >
 	<nav role="navigation"> 
 		<ul id="appMenu"> 
-			<li><a class="homeLink" href="/index.htm"><img src="${pageContext.request.contextPath}/moduleResources/pihrwanda/images/gohome.png"></a>
+			<li><a class="homeLink" href="${pageContext.request.contextPath}/module/pihrwanda/apps/oncology/index.form"><img src="${pageContext.request.contextPath}/moduleResources/pihrwanda/images/gohome.png"></a>
 			<li><a class="boldWhiteLink" href="#">Find</a> 
 				<ul> 
 					<li><a href="#">Search for patient</a></li> 
@@ -118,13 +122,13 @@
 			</li>
 			<li><a class="boldWhiteLink" href="#">Edit</a> 
 				<ul> 
-					<li><a href="#">Demographics</a></li> 
+					<li><a href="http://localhost:8080/openmrs/module/htmlformentry/htmlFormEntry.form?returnUrl=/openmrs/module/pihrwanda/apps/oncology/patientDashboard.form?patientId=${patient.patientId}&formId=189&mode=enter">Demographics</a></li> 
 				</ul>
 			</li>
 			<li><a class="boldWhiteLink" href="#">Enter</a>
 				<ul> 
-					<li><a  href="#">Staging & Diagnosis</a></li>
-					<li><a  href="#">Treatment Administration Summary</a>
+					<li><a href="http://localhost:8080/openmrs/module/htmlformentry/htmlFormEntry.form?returnUrl=/openmrs/module/pihrwanda/apps/oncology/patientDashboard.form?patientId=${patient.patientId}&formId=188&mode=enter">Staging & Diagnosis</a></li>
+					<li><a href="http://localhost:8080/openmrs/module/htmlformentry/htmlFormEntry.form?returnUrl=/openmrs/module/pihrwanda/apps/oncology/patientDashboard.form?patientId=${patient.patientId}&formId=187&mode=enter">Treatment Administration Summary</a>
 				</ul>	
 			</li>
 			<li><a class="boldWhiteLink" href="#">Print</a>
@@ -137,7 +141,7 @@
 		</ul>
 	</nav>
 </span>
-
+</span>
 	
 <c:if test="${patient.voided}">
 	<div id="patientDashboardVoided" class="retiredMessage">
@@ -173,7 +177,7 @@
 		<td class="pihRwandaPatientTabs">
 				<div id="patientTabs${patientVariation}">
 					<ul>
-						<li><a id="patientSummaryTab" href="#" onclick="return changeTab(this);" hidefocus="hidefocus"><spring:message code="pihrwanda.patientSummary"/></a></li>
+						<li><a id="oncSummaryTab" href="#" onclick="return changeTab(this);" hidefocus="hidefocus"><spring:message code="pihrwanda.patientSummary"/></a></li>
 						<li><a id="patientRegimenTab" href="#" onclick="return changeTab(this);" hidefocus="hidefocus"><spring:message code="patientDashboard.regimens"/></a></li>
 						<openmrs:globalProperty key="visits.enabled" defaultValue="true" var="visitsEnabled"/>
 						<c:choose>		
@@ -185,16 +189,14 @@
 							</c:otherwise>
 						</c:choose>
 						
-						<li><a id="patientGraphsTab" href="#" onclick="return changeTab(this);" hidefocus="hidefocus"><spring:message code="patientDashboard.graphs"/></a></li>
-						
-						<li><a id="patientNotesTab" href="#" onclick="return changeTab(this);" hidefocus="hidefocus"><spring:message code="pihrwanda.notes"/></a></li>
+						<li><a id="patientNotesTab" href="#" onclick="return changeTab(this);" hidefocus="hidefocus"><spring:message code="pihrwanda.notes"/></a></li>  
 					</ul>
 				</div>
 			</div>
 
 			<div id="patientSections">
 				
-				<div id="patientSummary" style="display:none;">
+				<div id="oncSummary" style="display:none;">
 					<openmrs:portlet url="apps/oncology/oncSummary.portlet" id="oncologySummary" moduleId="pihrwanda" patientId="${patient.patientId}"/>
 				</div>
 				
@@ -222,13 +224,8 @@
 					</c:otherwise>
 				</c:choose>
 				
-				<div id="patientGraphs" style="display:none;">
-					<openmrs:extensionPoint pointId="org.openmrs.patientDashboard.GraphsTabHeader" type="html" parameters="patientId=${patient.patientId}" />
-					<openmrs:portlet url="patientGraphs" id="patientGraphsPortlet" patientId="${patient.patientId}"/>
-				</div>
-				
-				<div id="patientNotes" style="display:none;">
-			
+				<div id="patientNotes">
+					<!-- <openmrs:portlet url="apps/oncology/clinicianNotes.portlet" id="clinicianNotes" moduleId="pihrwanda" patientId="${patient.patientId}"/> -->
 				</div>
 			</div>
 		</td>
@@ -251,4 +248,6 @@
 	</div>
 </div>
 
+
 <%@ include file="/WEB-INF/template/footer.jsp" %>
+</div>

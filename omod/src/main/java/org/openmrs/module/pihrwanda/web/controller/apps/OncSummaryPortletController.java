@@ -253,7 +253,7 @@ public class OncSummaryPortletController extends PortletController {
 				{
 					if(member.getConcept().equals(otherTransfusionType))
 					{
-						transfusion.setTransfusionType(member.getConcept().getDisplayString());
+						transfusion.setTransfusionType(member.getValueText());
 					}
 					else if(member.getConcept().equals(otherTransfusionUnits))
 					{
