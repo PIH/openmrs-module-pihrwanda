@@ -36,8 +36,8 @@
 
 	<properties>
 		<openMRSVersion>1.9.0</openMRSVersion>
-		<reportingVersion>0.7.0</reportingVersion>
-		<orderextensionVersion>1.0.0-SNAPSHOT</orderextensionVersion>
+		<reportingVersion>0.7.2</reportingVersion>
+		<orderextensionVersion>1.1</orderextensionVersion>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
@@ -87,7 +87,15 @@
 
 		<dependency>
 			<groupId>org.openmrs.module</groupId>
-			<artifactId>reporting</artifactId>
+			<artifactId>reporting-api</artifactId>
+			<version>${reportingVersion}</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openmrs.module</groupId>
+			<artifactId>reporting-omod</artifactId>
 			<version>${reportingVersion}</version>
 			<type>jar</type>
 			<scope>provided</scope>
