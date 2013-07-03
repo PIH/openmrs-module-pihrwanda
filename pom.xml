@@ -24,9 +24,10 @@
 	</distributionManagement>
 
 	<scm>
-		<connection>scm:svn:http://svn.openmrs.org/openmrs-modules/pihrwanda/trunk/</connection>
-		<developerConnection>scm:svn:http://svn.openmrs.org/openmrs-modules/pihrwanda/trunk/</developerConnection>
-		<url>http://svn.openmrs.org/openmrs-modules/pihrwanda/trunk/</url>
+		<connection>scm:git:https://github.com/PIH/openmrs-module-pihrwanda.git</connection>
+		<developerConnection>scm:git:https://github.com/PIH/openmrs-module-pihrwanda.git</developerConnection>
+		<url>https://github.com/PIH/openmrs-module-pihrwanda.git</url>
+		<tag>HEAD</tag>
 	</scm>
 
 	<modules>
